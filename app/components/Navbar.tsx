@@ -8,11 +8,10 @@ import { IconSearch, IconCategoryFilled, IconMovie, IconBrandNetflix, IconAlienF
 
 function Navbar({ className }: { className?: string }) {
 	const [active, setActive] = useState<string | null>(null);
-	const [searchQuery, setSearchQuery] = useState<string>(""); // State for search query
+	const [searchQuery, setSearchQuery] = useState<string>("");
 
 	const handleSearch = () => {
 		if (searchQuery) {
-			// Redirect to movies page with search query
 			window.location.href = `/movies?search=${encodeURIComponent(searchQuery)}`;
 		}
 	};
@@ -30,13 +29,13 @@ function Navbar({ className }: { className?: string }) {
 							type="text"
 							className="sm:w-96 sm:h-10 bg-gray-400 bg-opacity-20 rounded-full flex-grow px-5 text-sm text-white placeholder-gray-500"
 							placeholder="Search for something..."
-							value={searchQuery} // Bind input value to searchQuery
-							onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery on input change
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
 						/>
 						<button
 							className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-300 transition-colors duration-200"
 							aria-label="Search"
-							onClick={handleSearch} // Handle search button click
+							onClick={handleSearch}
 						>
 							<IconSearch size={15} className="text-gray-800" />
 						</button>

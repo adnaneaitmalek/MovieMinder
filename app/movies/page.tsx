@@ -15,7 +15,7 @@ interface Movie {
 }
 
 const Movies = () => {
-	const searchParams = useSearchParams(); // Use useSearchParams to get query params
+	const searchParams = useSearchParams();
 	let search = searchParams.get("search");
 
 	const [movies, setMovies] = useState<Movie[]>([]);
@@ -56,14 +56,12 @@ const Movies = () => {
 
 	const handleFilteredMovies = () => {
 		if (search) {
-			// Find the specific movie based on the search term
 			const foundMovie = movies.find((movie) => movie.title.toLowerCase() === search!.toLowerCase());
 			if (foundMovie) {
-				// Return an array with the found movie
-				return [foundMovie]; // Return only the found movie
+				return [foundMovie];
 			}
 		}
-		return []; // Return an empty array if no movie is found
+		return [];
 	};
 
 	const displayedMovies = handleFilteredMovies();
