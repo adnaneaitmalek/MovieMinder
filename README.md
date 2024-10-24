@@ -27,7 +27,7 @@ The easiest way to run this project is by using **Docker**. Follow these steps t
     docker compose up -d
     ```
     - This will start both the app and the database containers.
-    - You can access the app at: [http://localhost:3000](http://localhost:3000)
+    - **Note:** It might take a little time for the server to start after running the above command. Be patient; it will be available shortly at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
