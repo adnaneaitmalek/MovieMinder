@@ -1,4 +1,4 @@
-# Movie Mind
+# 🎬 Movie Minder (Test Version)
 
 Welcome to **Movie Mind**, a simple web application to help you save and manage your movie ideas!
 
