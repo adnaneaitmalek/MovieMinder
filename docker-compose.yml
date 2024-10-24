@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+    postgres:
+        image: postgres:latest
+        container_name: postgres_db
+        environment:
+            POSTGRES_DB: movies_db
+            POSTGRES_USER: adnane
+            POSTGRES_PASSWORD: adnane
+        ports:
+            - "5433:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+
+    app:
+        build:
+            context: .
+        container_name: node_app
+        environment:
+            DATABASE_URL: postgres://adnane:adnane@postgres:5432/movies_db
+        depends_on:
+            - postgres
+        ports:
+            - "3000:3000"
+            - "5555:5555"
+        command: >
+            sh -c "
+            npm install &&
+            npx prisma db push &&
+            npm run dev"
+
+volumes:
+    postgres_data:
