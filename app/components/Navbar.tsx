@@ -8,6 +8,15 @@ import { IconSearch, IconCategoryFilled, IconMovie, IconBrandNetflix, IconAlienF
 
 function Navbar({ className }: { className?: string }) {
 	const [active, setActive] = useState<string | null>(null);
+	const [searchQuery, setSearchQuery] = useState<string>(""); // State for search query
+
+	const handleSearch = () => {
+		if (searchQuery) {
+			// Redirect to movies page with search query
+			window.location.href = `/movies?search=${encodeURIComponent(searchQuery)}`;
+		}
+	};
+
 	return (
 		<div className={cn("fixed top-10 inset-x-0 max-w-3xl mx-auto z-50", className)}>
 			<Menu setActive={setActive}>
@@ -21,32 +30,36 @@ function Navbar({ className }: { className?: string }) {
 							type="text"
 							className="sm:w-96 sm:h-10 bg-gray-400 bg-opacity-20 rounded-full flex-grow px-5 text-sm text-white placeholder-gray-500"
 							placeholder="Search for something..."
+							value={searchQuery} // Bind input value to searchQuery
+							onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery on input change
 						/>
 						<button
 							className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-full bg-white hover:bg-gray-300 transition-colors duration-200"
 							aria-label="Search"
+							onClick={handleSearch} // Handle search button click
 						>
 							<IconSearch size={15} className="text-gray-800" />
 						</button>
 					</div>
+
 					<MenuItem setActive={setActive} active={active} item="Categorie" icon={<IconCategoryFilled size={18} />}>
 						<div className="flex flex-col space-y-4 text-sm">
 							<Link href="/movies" className="flex items-center gap-2">
 								<IconMovie size={18} />
 								Movies
 							</Link>
-							<Link href="#" className="flex items-center gap-2">
+							<span className="flex items-center gap-2 text-gray-400 cursor-not-allowed">
 								<IconBrandNetflix size={18} />
 								Series
-							</Link>
-							<Link href="#" className="flex items-center gap-2">
+							</span>
+							<span className="flex items-center gap-2 text-gray-400 cursor-not-allowed">
 								<IconAlienFilled size={18} />
 								Anime
-							</Link>
-							<Link href="#" className="flex items-center gap-2">
+							</span>
+							<span className="flex items-center gap-2 text-gray-400 cursor-not-allowed">
 								<IconDeviceTvFilled size={18} />
 								Tv Shows
-							</Link>
+							</span>
 						</div>
 					</MenuItem>
 				</div>

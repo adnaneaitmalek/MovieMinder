@@ -21,9 +21,10 @@ const Landing = () => {
 			<div className="flex relative z-10 mt-20">
 				<div className="w-full flex flex-col items-center gap-6">
 					<h1 className="heading" style={{ lineHeight: 1.2 }}>
-						Discover Your Next
+						Collect Your
 						<br />
-						<span className="text-purple-400">Favorite Content</span>
+						<span className="text-purple-400">Must-Watch </span>
+						Movies
 					</h1>
 					<p className="max-w-[512px] text-center text-gray-400">
 						With Movie Mind, you can easily add movies and series to your collection, mark them as watched, and save your
