@@ -27,7 +27,8 @@ The easiest way to run this project is by using **Docker**. Follow these steps t
     docker compose up -d
     ```
     - This will start both the app and the database containers.
-    - **Note:** It might take a little time for the server to start after running the above command. Be patient; it will be available shortly at: [http://localhost:3000](http://localhost:3000). If you want to check if the website is started yet run
+    - **Note:** It might take a little time for the server to start after running the above command. Be patient; it will be available shortly at: [http://localhost:3000](http://localhost:3000). If you want to check if the website is started yet run:
+
     ```bash
     docker logs node_app
     ```
