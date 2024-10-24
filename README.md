@@ -18,8 +18,8 @@ The easiest way to run this project is by using **Docker**. Follow these steps t
 1. **Clone the Repository:**
 
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-folder>
+    git clone https://github.com/adnaneaitmalek/movie-minder.git
+    cd movie-minder
     ```
 
 2. **Start the App with Docker Compose:**
