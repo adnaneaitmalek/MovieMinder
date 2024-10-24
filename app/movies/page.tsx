@@ -185,12 +185,12 @@ const Movies = () => {
 								<div key={movie.id} className="w-full flex flex-col items-center justify-center">
 									<div
 										key={movie.id}
-										className="dark:bg-black-100 w-full max-w-3xl p-4 rounded-xl shadow-lg my-3 border border-black/[0.1] dark:border-white/[0.1] flex items-center gap-4 justify-between"
+										className="bg-black-100 w-full max-w-3xl p-4 rounded-xl shadow-lg my-3 border border-white/[0.1] flex items-center gap-4 justify-between"
 									>
 										<div className="flex items-start gap-4">
 											<Image src={placeholder} width={100} height={100} alt="movie" className=" rounded-lg" />
 											<div className="flex flex-col gap-2">
-												<h2 className="text-black dark:text-white font-bold text-xl">{movie.title}</h2>
+												<h2 className="text-white font-bold text-xl">{movie.title}</h2>
 												<p className="text-sm text-gray-400 max-w-96">{movie.description}</p>
 											</div>
 										</div>
@@ -223,12 +223,12 @@ const Movies = () => {
 				.map((movie, index) => (
 					<div
 						key={movie.id}
-						className="dark:bg-black-100 w-full max-w-3xl p-4 rounded-xl shadow-lg my-3 border border-black/[0.1] dark:border-white/[0.1] flex items-center gap-4 justify-between"
+						className="bg-black-100 w-full max-w-3xl p-4 rounded-xl shadow-lg my-3 border border-white/[0.1] flex items-center gap-4 justify-between"
 					>
 						<div className="flex items-start gap-4">
 							<Image src={placeholder} width={100} height={100} alt="movie" className=" rounded-lg" />
 							<div className="flex flex-col gap-2">
-								<h2 className="text-black dark:text-white font-bold text-xl">{movie.title}</h2>
+								<h2 className="text-white font-bold text-xl">{movie.title}</h2>
 								<p className="text-sm text-gray-400 max-w-96">{movie.description}</p>
 							</div>
 						</div>
