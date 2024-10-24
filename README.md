@@ -13,7 +13,7 @@ The easiest way to run this project is by using **Docker**. Follow these steps t
 
 ---
 
-### 💻 Installation & Setup
+### 💻 Installation & Setup with Docker
 
 1. **Clone the Repository:**
 
@@ -46,6 +46,47 @@ If you'd like to inspect the database via **Prisma Studio**:
     npx prisma studio
     ```
     - You can now access Prisma Studio at: [http://localhost:5555](http://localhost:5555)
+
+---
+
+### 🚫 Installation & Setup without Docker
+
+If you prefer not to use Docker, follow these steps:
+
+1. **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/adnaneaitmalek/movie-minder.git
+    cd movie-minder
+    ```
+
+2. **Install Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Configure Your Database Manually:**
+
+    - **Install PostgreSQL** if you haven't already.
+    - Create a database named `movies_db` (or your choice).
+    - Create a user with a password and grant all privileges on that database.
+    - Create a `.env` file in the root of your project with the following variable:
+        ```env
+        DATABASE_URL=postgres://<username>:<password>@localhost:5432/movies_db
+        ```
+
+4. **Run Prisma to Set Up the Database:**
+
+    ```bash
+    npx prisma db push
+    ```
+
+5. **Start the Application:**
+    ```bash
+    npm run dev
+    ```
+    - Your app should now be running locally!
 
 ---
 
